@@ -4,29 +4,30 @@ package hello.springmvc2.basic.requestmapping;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/mapping/users")
 public class MappingClassController {
 
-    @GetMapping("/mapping/users")
+    @GetMapping
     public String user() {
         return "get users";
     }
 
-    @PostMapping("/mapping/users")
+    @PostMapping
     public String addUser() {
         return "add users";
     }
 
-    @GetMapping("/mapping/users/{userId}")
+    @GetMapping("/{userId}")
     public String findUser(@PathVariable String userId) {
         return "get user " + userId;
     }
 
-    @PatchMapping("/mapping/users/{userId}")
+    @PatchMapping("/{userId}")
     public String updateUser(@PathVariable String userId) {
         return "get user " + userId;
     }
 
-    @DeleteMapping("/mapping/users/{userId}")
+    @DeleteMapping("/{userId}")
     public String deleteeUser(@PathVariable String userId) {
         return "get user " + userId;
     }
